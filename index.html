@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+    <title>CRUD App</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+    <!-- Bootstarp Stylesheet -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <section class="py-3">
+        <div class="container">
+            <div class="content py-5">
+                <div class="form">
+                    <div class="form-floating mb-3">
+                        <input oninput="validateForm(this)" type="text" class="form-control" id="productName" placeholder="Product Name">
+                        <span class="span-alert text-danger d-none">Enter valid name, ex: Iphone 13</span>
+                        <label for="productName">Product Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input oninput="validateForm(this)" type="number" class="form-control" id="productPrice" placeholder="Product Price">
+                        <span class="span-alert text-danger d-none"> Enter price in range 6000 : 60000</span>
+                        <label for="productPrice">Product Price</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input oninput="validateForm(this)" type="text" list="categoryList" class="form-control" id="productCategory" placeholder="Product Category">
+                        <span class="span-alert text-danger d-none">Choose category from the list</span>
+                        <label for="productCategory">Product Category</label>
+                    </div>
+                    <datalist id="categoryList">
+                        <option value="Smart Phones"></option>
+                        <option value="Smart Watches"></option>
+                        <option value="Monitors"></option>
+                        <option value="Airpods"></option>
+                    </datalist>
+                    <div class="form-floating mb-3">
+                        <textarea oninput="validateForm(this)" class="form-control" placeholder="Write A Description" id="productDesc"></textarea>
+                        <label for="productDesc">Description</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input oninput="validateForm(this)" type="file" accept="image/*" class="form-control" id="productImage" placeholder="Product Image">
+                        <label for="productImage">Product Image</label>
+                    </div>
+                    <button type="submit" id="addBtn" class="btn btn-primary" onclick="addProduct()">Add Product</button>
+                    <button type="submit" id="updateBtn" class="btn btn-success d-none" onclick="updateProduct()">Update Product</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div id="searchField" class="form-floating d-none mb-4">
+                <input type="search" class="form-control" id="productSearch" oninput="searchProduct(this.value)" placeholder="Search">
+                <label for="productSearch">Search</label>
+            </div>
+            <div id="productsContainer" class="row gy-3"></div>
+        </div>
+    </section>
+
+    <script src="./JS/main.js"></script>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+</body>
+</html>

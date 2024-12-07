@@ -1,0 +1,36 @@
+body {
+    font-family: "Parkinsans", sans-serif;
+}
+img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.category {
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card {
+    min-height: 400px;
+}
+.price {
+    font-size: 12px;
+}
+.card-text {
+    color: #777;
+}
+.form-control.is-invalid:focus {
+    border-color: #D01919;
+    box-shadow: none;
+}
+.form-control.is-valid:focus {
+  border-color: #7532F9;
+  box-shadow: none;
+}
+.span-alert {
+    padding-left: 0.75rem;
+}
